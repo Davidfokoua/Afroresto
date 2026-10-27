@@ -1,0 +1,103 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128;
+    }
+
+    // Connection healthcheck test doc
+    match /test/{docId} {
+      allow read: if true;
+    }
+
+    // Restaurants: readable by diners and staff, writable by valid ID
+    match /restaurants/{restaurantId} {
+      allow read: if true;
+      allow write: if isValidId(restaurantId);
+    }
+
+    // Menu Categories: readable by customers and staff
+    match /categories/{categoryId} {
+      allow read: if true;
+      allow write: if isValidId(categoryId);
+    }
+
+    // Menu Items: readable by all diners and staff
+    match /menu_items/{itemId} {
+      allow read: if true;
+      allow write: if isValidId(itemId);
+    }
+
+    // Areas: dining sections
+    match /areas/{areaId} {
+      allow read: if true;
+      allow write: if isValidId(areaId);
+    }
+
+    // Tables: table identifiers and status
+    match /tables/{tableId} {
+      allow read: if true;
+      allow write: if isValidId(tableId);
+    }
+
+    // Orders: customers create and track orders, staff update status
+    match /orders/{orderId} {
+      allow read: if true;
+      allow write: if isValidId(orderId);
+    }
+
+    // Restaurant Statistics: real-time synchronisation across sessions and devices
+    match /statistics/{restaurantId} {
+      allow read: if true;
+      allow write: if isValidId(restaurantId);
+    }
+
+    // Waiter Calls: table bell notifications sent by customers, acknowledged by staff
+    match /waiter_calls/{callId} {
+      allow read: if true;
+      allow write: if isValidId(callId);
+    }
+
+    // Reservations: customer advance table bookings
+    match /reservations/{reservationId} {
+      allow read: if true;
+      allow write: if isValidId(reservationId);
+    }
+
+    // Inventory: stock tracking and ingredient management
+    match /inventory/{inventoryId} {
+      allow read: if true;
+      allow write: if isValidId(inventoryId);
+    }
+
+    // Purchases: procurement invoices and supply entries
+    match /purchases/{purchaseId} {
+      allow read: if true;
+      allow write: if isValidId(purchaseId);
+    }
+
+    // Staff: staff member profiles and roles
+    match /staff/{staffId} {
+      allow read: if true;
+      allow write: if isValidId(staffId);
+    }
+
+    // Drivers: courier profiles, vehicle matricules and status
+    match /drivers/{driverId} {
+      allow read: if true;
+      allow write: if isValidId(driverId);
+    }
+
+    // Users: user profiles and registered accounts
+    match /users/{userId} {
+      allow read: if true;
+      allow write: if isValidId(userId);
+    }
+
+    // Global catch-all default deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

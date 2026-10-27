@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" fill="none">
+  <!-- White circular backdrop -->
+  <circle cx="250" cy="250" r="240" fill="#FFFFFF"/>
+
+  <!-- 1. TOP & LEFT WARM AMBER/TERRACOTTA ARC -->
+  <path d="M 98 375 A 190 190 0 1 1 360 78" stroke="#F59E0B" stroke-width="24" stroke-linecap="round" fill="none"/>
+
+  <!-- 2. BOTTOM ACACIA / EMERALD GREEN PALM SWOOSH -->
+  <path d="M 425 228 C 420 300, 395 380, 310 435 C 240 480, 150 475, 102 396 C 145 440, 220 460, 290 425 C 375 385, 410 300, 425 228 Z" fill="#059669"/>
+  <path d="M 102 396 C 160 455, 260 470, 350 420 C 400 392, 420 340, 420 340 C 400 380, 360 415, 300 435 C 240 455, 160 440, 102 396 Z" fill="#047857"/>
+  <path d="M 213 435 C 255 450, 310 445, 355 410 C 405 370, 415 300, 425 228 C 405 320, 350 405, 265 428 C 240 435, 215 435, 213 435 Z" fill="#10B981"/>
+  <path d="M 240 445 C 285 448, 335 430, 375 390 C 350 418, 300 438, 255 436 C 242 435, 235 440, 240 445 Z" fill="#FFFFFF" opacity="0.9"/>
+
+  <!-- 3. STEAM WAVES RISING FROM CLOCHE (Warm Gold) -->
+  <path d="M 190 135 C 180 115, 195 95, 185 75 C 182 68, 190 68, 194 74 C 205 92, 190 112, 198 135 Z" fill="#F59E0B"/>
+  <path d="M 215 138 C 205 110, 225 85, 215 55 C 212 48, 220 48, 225 54 C 238 80, 218 108, 224 138 Z" fill="#D97706"/>
+  <path d="M 238 135 C 230 115, 245 95, 238 75 C 235 68, 242 68, 246 74 C 255 92, 242 112, 247 135 Z" fill="#F59E0B"/>
+
+  <!-- 4. RESTAURANT CLOCHE DOME & BASE (Navy Blue #0F172A) -->
+  <circle cx="202" cy="142" r="8.5" fill="#0F172A"/>
+  <path d="M 125 240 C 125 155, 279 155, 279 240 Z" fill="#0F172A"/>
+  <path d="M 140 225 C 145 180, 185 162, 202 160 C 190 168, 155 188, 148 225 Z" fill="#F59E0B" opacity="0.9"/>
+  <rect x="114" y="247" width="176" height="15" rx="7.5" fill="#0F172A"/>
+
+  <!-- 5. DINING TABLE & PEDESTAL (Navy Blue #0F172A) -->
+  <rect x="138" y="290" width="128" height="16" rx="4" fill="#0F172A"/>
+  <path d="M 175 306 L 229 306 C 224 335, 222 360, 238 395 L 166 395 C 182 360, 180 335, 175 306 Z" fill="#0F172A"/>
+  <path d="M 160 395 L 244 395 C 248 408, 240 414, 235 414 L 169 414 C 164 414, 156 408, 160 395 Z" fill="#0F172A"/>
+
+  <!-- 6. CHAIRS -->
+  <path d="M 103 268 C 103 268, 114 300, 118 335 L 126 335 C 122 300, 113 268, 113 268 Z" fill="#0F172A"/>
+  <path d="M 116 345 L 114 414 L 123 414 L 126 345 Z" fill="#0F172A"/>
+  <path d="M 160 345 L 165 414 L 157 414 L 151 345 Z" fill="#0F172A"/>
+  <rect x="113" y="331" width="53" height="14" rx="3" fill="#F59E0B"/>
+
+  <!-- 7. RIGHT CHAIR -->
+  <path d="M 296 268 C 296 268, 285 300, 281 335 L 273 335 C 277 300, 286 268, 286 268 Z" fill="#0F172A"/>
+  <path d="M 283 345 L 285 414 L 276 414 L 273 345 Z" fill="#0F172A"/>
+  <path d="M 239 345 L 234 414 L 242 414 L 248 345 Z" fill="#0F172A"/>
+  <rect x="233" y="331" width="53" height="14" rx="3" fill="#F59E0B"/>
+
+  <!-- 8. SMARTPHONE WITH QR CODE (Right side, Navy #0F172A) -->
+  <rect x="306" y="90" width="104" height="172" rx="20" fill="#0F172A"/>
+  <rect x="345" y="101" width="26" height="4" rx="2" fill="#64748B"/>
+  <rect x="313" y="112" width="90" height="140" rx="8" fill="#FFFFFF"/>
+
+  <!-- QR Scan Corners (Warm Amber) -->
+  <path d="M 326 138 L 326 128 L 336 128" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 390 138 L 390 128 L 380 128" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 326 226 L 326 236 L 336 236" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M 390 226 L 390 236 L 380 236" stroke="#F59E0B" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- QR Matrix Blocks -->
+  <rect x="333" y="143" width="22" height="22" rx="3" fill="#0F172A"/>
+  <rect x="337" y="147" width="14" height="14" rx="1.5" fill="#FFFFFF"/>
+  <rect x="340" y="150" width="8" height="8" rx="1" fill="#0F172A"/>
+
+  <rect x="361" y="143" width="22" height="22" rx="3" fill="#0F172A"/>
+  <rect x="365" y="147" width="14" height="14" rx="1.5" fill="#FFFFFF"/>
+  <rect x="368" y="150" width="8" height="8" rx="1" fill="#0F172A"/>
+
+  <rect x="333" y="199" width="22" height="22" rx="3" fill="#0F172A"/>
+  <rect x="337" y="203" width="14" height="14" rx="1.5" fill="#FFFFFF"/>
+  <rect x="340" y="206" width="8" height="8" rx="1" fill="#0F172A"/>
+
+  <rect x="359" y="170" width="6" height="6" fill="#0F172A"/>
+  <rect x="367" y="170" width="5" height="5" fill="#0F172A"/>
+  <rect x="375" y="170" width="8" height="6" fill="#0F172A"/>
+
+  <rect x="333" y="170" width="5" height="5" fill="#0F172A"/>
+  <rect x="342" y="170" width="5" height="5" fill="#0F172A"/>
+  <rect x="350" y="170" width="5" height="5" fill="#0F172A"/>
+
+  <rect x="333" y="180" width="6" height="6" fill="#0F172A"/>
+  <rect x="345" y="180" width="8" height="5" fill="#0F172A"/>
+  <rect x="359" y="180" width="6" height="5" fill="#0F172A"/>
+  <rect x="371" y="180" width="5" height="6" fill="#0F172A"/>
+
+  <rect x="333" y="190" width="5" height="5" fill="#0F172A"/>
+  <rect x="342" y="190" width="6" height="5" fill="#0F172A"/>
+  <rect x="352" y="190" width="5" height="5" fill="#0F172A"/>
+  <rect x="361" y="190" width="8" height="5" fill="#0F172A"/>
+  <rect x="375" y="190" width="6" height="5" fill="#0F172A"/>
+
+  <rect x="359" y="200" width="6" height="5" fill="#0F172A"/>
+  <rect x="371" y="200" width="6" height="6" fill="#0F172A"/>
+  <rect x="360" y="210" width="8" height="5" fill="#0F172A"/>
+  <rect x="374" y="210" width="5" height="5" fill="#0F172A"/>
+  <rect x="360" y="219" width="5" height="5" fill="#0F172A"/>
+  <rect x="370" y="219" width="10" height="5" fill="#0F172A"/>
+</svg>

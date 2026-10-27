@@ -1,0 +1,8 @@
+{
+  "name": "Remix RESTOCAM - Plateforme SaaS de Gestion de Restaurants",
+  "description": "Application SaaS multi-tenant complète de gestion de restaurants avec menu digital QR code, commandes en temps réel, écran cuisine KDS, gestion des serveurs, stocks et paiements (OM, MoMo, Espèces).",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

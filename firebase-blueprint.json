@@ -1,0 +1,295 @@
+{
+  "entities": {
+    "Restaurant": {
+      "title": "Restaurant",
+      "description": "Establishment account information and configuration",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "slug": { "type": "string" },
+        "ownerName": { "type": "string" },
+        "ownerEmail": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "city": { "type": "string" },
+        "currency": { "type": "string" },
+        "subscriptionPlan": { "type": "string" },
+        "subscriptionStatus": { "type": "string" },
+        "subscriptionExpiresAt": { "type": "string" },
+        "subscriptionStartedAt": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "ownerEmail"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Dining table, delivery or takeaway customer order",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "tableId": { "type": "string" },
+        "tableName": { "type": "string" },
+        "orderNumber": { "type": "string" },
+        "orderType": { "type": "string" },
+        "status": { "type": "string" },
+        "paymentStatus": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "deliveryInfo": { "type": "object" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "totalAmount", "status", "paymentStatus"]
+    },
+    "RestaurantStatistics": {
+      "title": "RestaurantStatistics",
+      "description": "Persistent synchronized statistics summary for a restaurant account across all devices and sessions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "totalRevenue": { "type": "number" },
+        "totalOrdersCount": { "type": "number" },
+        "paidOrdersCount": { "type": "number" },
+        "pendingOrdersCount": { "type": "number" },
+        "completedOrdersCount": { "type": "number" },
+        "cancelledOrdersCount": { "type": "number" },
+        "avgTicket": { "type": "number" },
+        "salesByPaymentMethod": { "type": "object" },
+        "salesByCategory": { "type": "object" },
+        "salesByDayOfWeek": { "type": "object" },
+        "hourlyDistribution": { "type": "object" },
+        "dailyHistory": { "type": "object" },
+        "lastUpdated": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "totalRevenue", "totalOrdersCount", "lastUpdated"]
+    },
+    "WaiterCall": {
+      "title": "WaiterCall",
+      "description": "Real-time table bell call dispatched to servers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "tableId": { "type": "string" },
+        "tableName": { "type": "string" },
+        "areaName": { "type": "string" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "tableId", "status", "createdAt"]
+    },
+    "InventoryItem": {
+      "title": "InventoryItem",
+      "description": "Ingredient and beverage stock references with minimum thresholds and supplier costs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "quantity": { "type": "number" },
+        "unit": { "type": "string" },
+        "minimumQuantity": { "type": "number" },
+        "supplier": { "type": "string" },
+        "purchasePrice": { "type": "number" },
+        "unitCost": { "type": "number" },
+        "lastRestockedAt": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "name", "quantity", "unit", "minimumQuantity", "purchasePrice"]
+    },
+    "PurchaseRecord": {
+      "title": "PurchaseRecord",
+      "description": "Procurement and supply purchase log with supplier invoices, costs in FCFA, and item details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "invoiceNumber": { "type": "string" },
+        "supplierName": { "type": "string" },
+        "category": { "type": "string" },
+        "totalAmount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "items": { "type": "array" },
+        "purchasedBy": { "type": "string" },
+        "notes": { "type": "string" },
+        "purchaseDate": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "supplierName", "totalAmount", "paymentMethod", "purchaseDate"]
+    },
+    "TableReservation": {
+      "title": "TableReservation",
+      "description": "Advance customer online table bookings and reservations",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "tableId": { "type": "string" },
+        "tableName": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerPhone": { "type": "string" },
+        "guestsCount": { "type": "number" },
+        "reservationDate": { "type": "string" },
+        "reservationTime": { "type": "string" },
+        "status": { "type": "string" },
+        "specialRequests": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "customerName", "customerPhone", "guestsCount", "reservationDate", "reservationTime", "status"]
+    },
+    "MenuCategory": {
+      "title": "MenuCategory",
+      "description": "Categorization for dishes and drinks on the menu",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "name": { "type": "string" },
+        "icon": { "type": "string" },
+        "sortOrder": { "type": "number" },
+        "active": { "type": "boolean" }
+      },
+      "required": ["id", "restaurantId", "name"]
+    },
+    "MenuItem": {
+      "title": "MenuItem",
+      "description": "Dish or beverage available in a restaurant menu",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "categoryId": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "available": { "type": "boolean" },
+        "preparationTime": { "type": "number" },
+        "imageUrl": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "name", "price"]
+    },
+    "RestaurantArea": {
+      "title": "RestaurantArea",
+      "description": "Dining room, terrace, VIP lounge, or outdoor section",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "name"]
+    },
+    "RestaurantTable": {
+      "title": "RestaurantTable",
+      "description": "Individual dining table with QR code identification",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "areaId": { "type": "string" },
+        "name": { "type": "string" },
+        "capacity": { "type": "number" },
+        "status": { "type": "string" },
+        "qrToken": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "name"]
+    },
+    "Staff": {
+      "title": "Staff",
+      "description": "Employee, waiter, chef, or manager profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "restaurantId": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "role": { "type": "string" },
+        "phone": { "type": "string" }
+      },
+      "required": ["id", "restaurantId", "name", "role"]
+    },
+    "DeliveryDriver": {
+      "title": "DeliveryDriver",
+      "description": "Registered delivery couriers with vehicle details, CNI identification and assigned zones",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "cniNumber": { "type": "string" },
+        "address": { "type": "string" },
+        "vehicleType": { "type": "string" },
+        "vehiclePlate": { "type": "string" },
+        "serviceZones": { "type": "array" },
+        "serviceCity": { "type": "string" },
+        "isOnline": { "type": "boolean" },
+        "rating": { "type": "number" },
+        "totalDeliveries": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "phone", "cniNumber", "vehiclePlate", "serviceCity"]
+    }
+  },
+  "firestore": {
+    "/restaurants/{restaurantId}": {
+      "schema": "Restaurant",
+      "description": "Collection of registered restaurants"
+    },
+    "/categories/{categoryId}": {
+      "schema": "MenuCategory",
+      "description": "Categories of items for each restaurant menu"
+    },
+    "/menu_items/{itemId}": {
+      "schema": "MenuItem",
+      "description": "Dishes and beverages available on the menu"
+    },
+    "/areas/{areaId}": {
+      "schema": "RestaurantArea",
+      "description": "Physical zones and dining areas"
+    },
+    "/tables/{tableId}": {
+      "schema": "RestaurantTable",
+      "description": "Tables for customer seating and QR ordering"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Orders created by customers or servers"
+    },
+    "/reservations/{reservationId}": {
+      "schema": "TableReservation",
+      "description": "Customer online table bookings and reservations"
+    },
+    "/statistics/{restaurantId}": {
+      "schema": "RestaurantStatistics",
+      "description": "Persistent synchronized statistics and revenue metrics for each restaurant account"
+    },
+    "/waiter_calls/{callId}": {
+      "schema": "WaiterCall",
+      "description": "Real-time notifications sent when a customer rings for a waiter at their table"
+    },
+    "/inventory/{inventoryId}": {
+      "schema": "InventoryItem",
+      "description": "Stock items and ingredient inventories for restaurants"
+    },
+    "/purchases/{purchaseId}": {
+      "schema": "PurchaseRecord",
+      "description": "Persistent purchase history and procurement invoices for restaurant accounts"
+    },
+    "/staff/{staffId}": {
+      "schema": "Staff",
+      "description": "Staff profiles and credentials for restaurant employees"
+    },
+    "/drivers/{driverId}": {
+      "schema": "DeliveryDriver",
+      "description": "Registered delivery couriers and riders"
+    }
+  }
+}
